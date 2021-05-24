@@ -2,7 +2,7 @@
   "name": "victory-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://donchatelain.github.io/victory-charts-playground/",
+  "homepage": "https://donchatelain.github.io/victory-charts-playground",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
