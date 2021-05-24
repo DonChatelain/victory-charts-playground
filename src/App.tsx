@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import { Home } from './components/Home';
 import { TopNavbar } from './components/TopNavbar'
 
@@ -10,9 +10,9 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
-          {/* fallback */}
+
           <Route> 
-            <Home/>
+            <Redirect to="/"></Redirect>
           </Route>
         </Switch>
       </Router>

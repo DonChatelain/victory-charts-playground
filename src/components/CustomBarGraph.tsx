@@ -11,6 +11,15 @@ export const CustomBarGraph: React.FC<CustomBarGraphProps> = ({
   domain,
 }) => {
 
+  const mapSizeToColor = (size: number): string => {
+    size = map(size, 0, 100, 60, 0)
+    return `hsl(${size},100%,50%)`;
+
+    function map(n: number, inMin: number, inMax: number, outMin: number, outMax: number) {
+      return (n - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  }
+  };
+
   return (
     <div className="CustomBarGraph">
       <VictoryChart
@@ -24,7 +33,7 @@ export const CustomBarGraph: React.FC<CustomBarGraphProps> = ({
       >
         <VictoryScatter
           style={{
-            data: { fill: 'tomato' }
+            data: { fill: (data) => mapSizeToColor(data.datum.size)}
           }}
           events={[
             {
