@@ -4,11 +4,15 @@ import { TopNavbar } from './components/TopNavbar'
 
 function App() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <TopNavbar />
         <Switch>
-          <Route exact path="/">
+          <Route path="/">
             <Home />
+          </Route>
+          {/* fallback */}
+          <Route> 
+            <Home/>
           </Route>
         </Switch>
       </Router>
